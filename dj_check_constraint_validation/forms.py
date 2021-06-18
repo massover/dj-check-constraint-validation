@@ -22,4 +22,4 @@ class CheckConstraintsMixin:
 
     def clean(self):
         self.validate_check_constraints()
-        super().clean()
+        return super().clean()

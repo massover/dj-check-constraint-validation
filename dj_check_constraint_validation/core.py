@@ -1,4 +1,5 @@
 import operator
+import typing
 
 from django.db.models import Q
 from django.db.models.expressions import Combinable
@@ -15,7 +16,9 @@ expression_funcs = {
 }
 
 
-def eval_q(q, data):
+def eval_q(q: Q, data: typing.Dict):
+    """ """
+
     def eval_expression(expression):
         if isinstance(expression.lhs, CombinedExpression):
             lhs_value = eval_expression(expression.lhs)
